@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: prodigy-v2
+    env: node
+    plan: free
+    buildCommand: npm install --workspaces && npm run build --workspaces
+    startCommand: node apps/server/dist/index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
